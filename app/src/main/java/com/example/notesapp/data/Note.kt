@@ -10,5 +10,5 @@ data class Note (
     val id: Int,
     val title: String,
     val description: String,
-    var dataAdded: Long
+    val dataAdded: Long
 )
