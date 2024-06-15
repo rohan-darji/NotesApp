@@ -30,7 +30,7 @@ class NoteViewModel(
     var state = combine(_state, isSortedByDateAdded, notes) { state, isSortedByDateAdded, notes ->
         state.copy(
             notes = notes
-        ).stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), NoteState())
+        )}.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), NoteState())
 
         fun onEvent(event: NotesEvent) {
             when(event) {
@@ -62,4 +62,4 @@ class NoteViewModel(
             }
         }
     }
-}
+
